@@ -74,7 +74,7 @@ declare class Stripe {
     webhooks: Stripe.resources.WebHooks;
     ephemeralKeys: Stripe.resources.EphemeralKeys;
     usageRecords: Stripe.resources.UsageRecords;
-    usageRecordSummarys: Stripe.resources.UsageRecordSummarys;
+    usageRecordSummaries: Stripe.resources.UsageRecordSummaries;
 
 
 
@@ -2377,7 +2377,7 @@ declare namespace Stripe {
 
             /**
              * If null, the invoice item is pending and will be included in the upcoming invoice.
-             */ 
+             */
             invoice: string | null;
             livemode: boolean;
             metadata: IMetadata;
@@ -5333,17 +5333,17 @@ declare namespace Stripe {
         }
     }
 
-    namespace usageRecordSummarys {
+    namespace usageRecordSummaries {
         /**
          * A object with a data property that contains an array of up to limit summaries,
          * starting after summary starting_after. Each entry in the array is a separate summary object.
          * If no more summaries are available, the resulting array is empty.
          */
-        interface IUsageRecordSummarys extends IList<IUsageRecordSummarysItem>{
+        interface IUsageRecordSummaries extends IList<IUsageRecordSummariesItem>{
             object: 'list'
         }
 
-        interface IUsageRecordSummarysItem {
+        interface IUsageRecordSummariesItem {
             id: string;
             object: string;
             invoice: string;
@@ -5353,7 +5353,7 @@ declare namespace Stripe {
             total_usage: number;
         }
 
-        interface IUsageRecordSummarysListOptions extends IListOptions{
+        interface IUsageRecordSummariesListOptions extends IListOptions{
             /**
              * Only summary items for the given subscription item.
              */
@@ -5379,12 +5379,12 @@ declare namespace Stripe {
             create(subscription: string, data: usageRecords.IUsageRecordCreationOptions, response?: IResponseFn<usageRecords.IUsageRecord>): Promise<usageRecords.IUsageRecord>;
         }
 
-        class UsageRecordSummarys extends StripeResource {
+        class UsageRecordSummaries extends StripeResource {
             /**
              * Creates a usage record for a specified subscription item and date, and fills it with a quantity.
              */
-            list(data: usageRecordSummarys.IUsageRecordSummarysListOptions, options: HeaderOptions, response?: IResponseFn<usageRecordSummarys.IUsageRecordSummarys>): Promise<usageRecordSummarys.IUsageRecordSummarys>;
-            list(data: usageRecordSummarys.IUsageRecordSummarysListOptions, response?: IResponseFn<usageRecordSummarys.IUsageRecordSummarys>): Promise<usageRecordSummarys.IUsageRecordSummarys>;
+            list(data: usageRecordSummaries.IUsageRecordSummariesListOptions, options: HeaderOptions, response?: IResponseFn<usageRecordSummaries.IUsageRecordSummaries>): Promise<usageRecordSummaries.IUsageRecordSummaries>;
+            list(data: usageRecordSummaries.IUsageRecordSummariesListOptions, response?: IResponseFn<usageRecordSummaries.IUsageRecordSummaries>): Promise<usageRecordSummaries.IUsageRecordSummaries>;
         }
 
         class Accounts extends StripeResource {
